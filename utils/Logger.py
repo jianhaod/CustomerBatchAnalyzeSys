@@ -19,9 +19,7 @@ class Logger(object):
 
 		rq = time.strftime('%Y%m%d%H%M', time.localtime(time.time()))
 		log_path = os.path.dirname(os.getcwd()) + '/Logs/'
-		if os.path.exists(log_path):
-			print("yes")
-		else:
+		if not os.path.exists(log_path):
 			os.makedirs(log_path)
 		log_name = log_path + rq + '.log'
 		fh = logging.FileHandler(log_name)

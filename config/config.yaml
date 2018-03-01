@@ -1,0 +1,21 @@
+# CustomerBatchAnalyzeSys config file
+
+# input video stream path
+video_stream_input_path: /root/workspace/CustomerBatchAnalyzeSys/input/videostream
+
+# video steam output path
+video_stream_output_path: /root/workspace/CustomerBatchAnalyzeSys/output/videostream
+
+# database redis/mysql config
+#redis:
+# host: 10.255.131.77
+# password: redisPassw0rd
+# db: 0
+
+#mysql_config:
+#  user: vdo_admin
+#  pw: vdoPassw0rd
+#  ip: 10.255.131.78
+#  port: 13306
+#  db_name: vdoappdb
+

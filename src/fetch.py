@@ -8,13 +8,14 @@ Create: 2018/2/12
 
 import cv2
 from PIL import Image
+from moviepy.editor import VideoFileClip
 
 # add logging lib
 import sys
 sys.path.append('/root/workspace/CustomerBatchAnalyzeSys/utils')
 from Logger import *
 
-logger = Logger(logger='fetchLog')
+#logger = Logger(logger='fetchLog')
 
 def split_video_to_frame(video_path, interval=4, lenth=10):
 	"""
@@ -22,6 +23,7 @@ def split_video_to_frame(video_path, interval=4, lenth=10):
 	:parm video_path: video file local path
 	:parm interval:	each seconds to get interval frame
 	"""
+	logger = Logger(logger='fetchLog')
 	camera_detect_img = {}
 	clipobj = VideoFileClip(video_path)
 
