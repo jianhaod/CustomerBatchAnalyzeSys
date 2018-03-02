@@ -7,6 +7,7 @@ Create: 2018/2/12
 """
 
 import cv2
+import numpy as np
 from PIL import Image
 from moviepy.editor import VideoFileClip
 
@@ -31,7 +32,7 @@ def split_video_to_frame(video_path, interval=4, lenth=10):
 	count = 0
 	total = 0
 
-	for im_index in clip.iter_frames():
+	for im_index in clipobj.iter_frames():
 		if count % interval == 0 and total <= number - 1:
 			img = np.array(Image.fromarray(im_index))
 			img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
@@ -52,5 +53,5 @@ def split_video_to_frame(video_path, interval=4, lenth=10):
 			count -= 1
 			del camera_detect_img[count]
 
-	clip.__del__()
+	clipobj.__del__()
 	return camera_detect_img

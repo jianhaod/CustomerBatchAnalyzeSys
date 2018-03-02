@@ -8,6 +8,7 @@ Create: 2018/3/1
 
 import os, sys
 import yaml
+import fileinput
 
 import fetch 
 
@@ -25,8 +26,12 @@ if __name__ == '__main__':
 	# fetch video stream frame
 	input_path = sysdict['video_stream_input_path']
 	output_path = sysdict['video_stream_output_path']
+	input_local_path = sysdict['input_local_path']
 
-	video_detect_dict = {}
-	video_detect_dict = fetch.split_video_to_frame(input_path)
+	# get video stream file name list from local
+	fetch_list = input_local_path + sysdict['redis']['wait_file_list']
+	for line in fileinput.input(fetch_list):
+		video_detect_dict = {}
+		video_detect_dict = fetch.split_video_to_frame(input_path + line.strip())
 
 	logger.logger.info("End!")

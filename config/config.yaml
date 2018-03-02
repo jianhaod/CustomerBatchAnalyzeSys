@@ -1,13 +1,21 @@
 # CustomerBatchAnalyzeSys config file
 
 # input video stream path
-video_stream_input_path: /root/workspace/CustomerBatchAnalyzeSys/input/videostream
+video_stream_input_path: /root/workspace/CustomerBatchAnalyzeSys/input/videostream/
 
 # video steam output path
-video_stream_output_path: /root/workspace/CustomerBatchAnalyzeSys/output/videostream
+video_stream_output_path: /root/workspace/CustomerBatchAnalyzeSys/output/videostream/
+
+# local test file path pre
+input_local_path: /root/workspace/CustomerBatchAnalyzeSys/localtest/
 
 # database redis/mysql config
-#redis:
+redis:
+ host: 255.255.255.255
+ password: test
+ db: 0
+ wait_file_list: test_list
+
 # host: 10.255.131.77
 # password: redisPassw0rd
 # db: 0
