@@ -9,6 +9,9 @@ video_stream_output_path: /root/workspace/CustomerBatchAnalyzeSys/output/videost
 # local test file path pre
 input_local_path: /root/workspace/CustomerBatchAnalyzeSys/localtest/
 
+# paral num
+paralnum: 4
+
 # database redis/mysql config
 redis:
  host: 255.255.255.255

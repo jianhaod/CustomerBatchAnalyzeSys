@@ -7,3 +7,4 @@ feature list:
 4. enable yaml module to support load sys config, enable yaml test case
 5. add system lanuch entry script
 6. add fetch file list support, enable fetch local video list test
+7. multiple process to fetch video and push dic into queue, enable multiple consumer process get dic from queue

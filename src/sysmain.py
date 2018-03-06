@@ -8,9 +8,10 @@ Create: 2018/3/1
 
 import os, sys
 import yaml
-import fileinput
+#import fileinput
 
-import fetch 
+import fetch
+import multimageanaly 
 
 sys.path.append('/root/workspace/CustomerBatchAnalyzeSys/utils')
 from Logger import *
@@ -27,11 +28,15 @@ if __name__ == '__main__':
 	input_path = sysdict['video_stream_input_path']
 	output_path = sysdict['video_stream_output_path']
 	input_local_path = sysdict['input_local_path']
+	paralnum = sysdict['paralnum']
 
 	# get video stream file name list from local
 	fetch_list = input_local_path + sysdict['redis']['wait_file_list']
-	for line in fileinput.input(fetch_list):
-		video_detect_dict = {}
-		video_detect_dict = fetch.split_video_to_frame(input_path + line.strip())
+	#for line in fileinput.input(fetch_list):
+	multimageanaly.multimageanaly(paralnum, input_path, fetch_list)
+
+	#for line in fileinput.input(fetch_list):
+	#	video_detect_dict = {}
+	#	video_detect_dict = fetch.split_video_to_frame(input_path + line.strip())
 
 	logger.logger.info("End!")
