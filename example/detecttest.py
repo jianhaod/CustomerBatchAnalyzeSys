@@ -11,4 +11,4 @@ import sys
 sys.path.append('../utils')
 from PersonDetect import *
 
-detectobj = PersonDetect("../config/persondetect.yaml")
+detectobj = PersonDetector("../config/persondetect.yaml")

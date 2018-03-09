@@ -30,26 +30,25 @@ class PersonDetector(object):
 	def detect(self, input):
 		
 		image_dic = input[0]
-        local_path = input[1]
-        channel = input[2]
-
-        local_path_b = local_path.split('/')
-
-        b_num = len(local_path_b)
-
-
-        output_file = config['per_det_output_file']+'/'+local_path_b[b_num - 5]+'/'+local_path_b[b_num - 4]+'/Channel_0'+str(channel)+'/Append'
-        time_file=(local_path.split('/')[-1]).split('.')[0]
-        if not os.path.exists(output_file):
-            os.makedirs(output_file)
-
-        file_temp=os.path.join(output_file,time_file+'.txt')
+		local_path = input[1]
+		channel = input[2]
+		
+		local_path_b = local_path.split('/')
+		
+		b_num = len(local_path_b)
+		
+		
+		output_file = config['per_det_output_file']+'/'+local_path_b[b_num - 5]+'/'+local_path_b[b_num - 4]+'/Channel_0'+str(channel)+'/Append'
+		time_file=(local_path.split('/')[-1]).split('.')[0]
+		if not os.path.exists(output_file):
+		    os.makedirs(output_file)
+		
+		file_temp=os.path.join(output_file,time_file+'.txt')
         #print (file_temp)
 
         f = open(file_temp, 'a')
         for img_num in range(len(image_dic)):
-
-            im = image_dic[img_num]
+			im = image_dic[img_num]
             #tmpTime = time.time()
             scores, boxes = im_detect(self.net, im)
             #print("imdetect Time: " + str(time.time() - tmpTime))

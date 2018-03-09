@@ -1,0 +1,19 @@
+# Caffe net config file
+
+# caffe faster_rcnn models prototext file
+prototxt: ./models/caffe/faster_rcnn/test.prototxt
+
+# caffe faster_rcnn models file
+caffemodel: ./models/caffe/faster_rcnn/vgg16_faster_rcnn.caffemodel
+
+# caffe faster_rcnn class type list
+netclasses:
+  - __background__
+  - customer
+  - sale
+
+# CONF_THRESH config
+CONF_THRESH: !!float 0.7
+
+# NMS_THRESH config
+NMS_THRESH: !!float 0.2
