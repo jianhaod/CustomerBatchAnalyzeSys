@@ -1,10 +1,10 @@
 # Caffe net config file
 
 # caffe faster_rcnn models prototext file
-prototxt: ./models/caffe/faster_rcnn/test.prototxt
+prototxt: ../models/caffe/faster_rcnn/test.prototxt
 
 # caffe faster_rcnn models file
-caffemodel: ./models/caffe/faster_rcnn/vgg16_faster_rcnn.caffemodel
+caffemodel: ../models/caffe/faster_rcnn/vgg16_faster_rcnn.caffemodel
 
 # caffe faster_rcnn class type list
 netclasses:
