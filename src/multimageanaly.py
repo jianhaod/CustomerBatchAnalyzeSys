@@ -6,11 +6,15 @@ Create: 2018/3/6
 @author: Jianhao
 """
 import fetch
+import sys
 
 import multiprocessing
 from multiprocessing.dummy import Pool
 from multiprocessing import Process, Queue, Lock
 import fileinput
+
+sys.path.append('../utils')
+from Logger import *
 
 def queuepush(q, path):
 	video_detect_dict = {}
@@ -51,14 +55,17 @@ def multimageanaly(paralnum, input_path, videopath):
 	param: paralnum
 	param: videopath
 	"""
+	logger = Logger(logger='multimageanalyLog')
 	pool = Pool(paralnum)
 
 	q = Queue()
 	lock = Lock()
 
+	logger.logger.info("launch %d process to fetch analye input video!" % paralnum)
 	for line in fileinput.input(videopath):
 		pool.apply_async(queuepush, (q, input_path + line.strip()))
 
+	logger.logger.info("launch %d process to consumer analye result!" % (paralnum/2))
 	for index in range(paralnum/2):
 		pool.apply_async(queueget, (q, lock))
 	

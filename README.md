@@ -8,3 +8,4 @@ feature list:
 5. add system lanuch entry script
 6. add fetch file list support, enable fetch local video list test
 7. multiple process to fetch video and push dic into queue, enable multiple consumer process get dic from queue
+8. caffe net person detect feature support & enable detect func testing
