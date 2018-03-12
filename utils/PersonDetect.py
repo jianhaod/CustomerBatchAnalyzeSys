@@ -5,10 +5,7 @@
 Create: 2018/3/8
 @author: Jianhao
 """
-import os, sys
-sys.path.append('../thirdparty/caffe-fast-rcnn/python')
-sys.path.append('../thirdparty/lib')
-
+import _init_paths
 from fast_rcnn.config import cfg
 from fast_rcnn.test import im_detect
 from fast_rcnn.nms_wrapper import nms

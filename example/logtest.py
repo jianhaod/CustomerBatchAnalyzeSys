@@ -8,7 +8,7 @@ Create: 2018/2/28
 
 import time
 import sys
-sys.path.append('/root/workspace/CustomerBatchAnalyzeSys/utils')
+import _init_utils_paths
 from Logger import *
 
 class TestMyLog(object):

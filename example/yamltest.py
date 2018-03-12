@@ -7,6 +7,7 @@ Create: 2018/3/1
 """
 
 import yaml
+import _init_utils_paths
 
 yamlfile = open('../config/config.yaml')
 sysdict = yaml.load(yamlfile)  
