@@ -2,7 +2,7 @@
 #-*- coding:utf8 -*-
 
 """
-Create: 2018/3/12
+Create: 2018/3/13
 @author: Jianhao
 """
 import os.path as osp
@@ -15,5 +15,5 @@ def add_path(path):
 this_dir = osp.dirname(__file__)
 
 # Add utils defined function to PYTHONPATH
-utils_path = osp.join(this_dir, '..', 'utils')
-add_path(utils_path)
+src_path = osp.join(this_dir, '..', 'src')
+add_path(src_path)

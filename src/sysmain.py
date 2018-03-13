@@ -8,12 +8,11 @@ Create: 2018/3/1
 
 import os, sys
 import yaml
-#import fileinput
 
 import fetch
 import multimageanaly 
 
-sys.path.append('/root/workspace/CustomerBatchAnalyzeSys/utils')
+import _init_utils_paths
 from Logger import *
 
 if __name__ == '__main__':

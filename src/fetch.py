@@ -11,9 +11,7 @@ import numpy as np
 from PIL import Image
 from moviepy.editor import VideoFileClip
 
-# add logging lib
-import sys
-sys.path.append('/root/workspace/CustomerBatchAnalyzeSys/utils')
+import _init_utils_paths
 from Logger import *
 
 #logger = Logger(logger='fetchLog')
@@ -33,7 +31,7 @@ def split_video_to_frame(video_path, interval=4, lenth=10):
 	total = 0
 
 	for im_index in clipobj.iter_frames():
-		if count % interval == 0 and total <= number - 1:
+		if total % interval == 0 and count <= number - 1:
 			img = np.array(Image.fromarray(im_index))
 			img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
 			camera_detect_img[count] = img

@@ -13,7 +13,7 @@ from multiprocessing.dummy import Pool
 from multiprocessing import Process, Queue, Lock
 import fileinput
 
-sys.path.append('../utils')
+import _init_utils_paths
 from Logger import *
 
 def queuepush(q, path):

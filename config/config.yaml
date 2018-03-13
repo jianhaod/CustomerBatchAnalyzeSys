@@ -1,13 +1,19 @@
 # CustomerBatchAnalyzeSys config file
 
 # input video stream path
-video_stream_input_path: /root/workspace/CustomerBatchAnalyzeSys/input/videostream/
+video_stream_input_path: ../input/videostream/
 
 # video steam output path
-video_stream_output_path: /root/workspace/CustomerBatchAnalyzeSys/output/videostream/
+video_stream_output_path: ../output/videostream/
 
-# local test file path pre
-input_local_path: /root/workspace/CustomerBatchAnalyzeSys/localtest/
+# shopname
+shopname: SQ2128
+
+# channel id or camera id
+channel: 3
+
+# local test file path pre for testing debug
+input_local_path: ../localtest/
 
 # paral num
 paralnum: 4
