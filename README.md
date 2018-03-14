@@ -12,3 +12,4 @@ feature list:
 9.  add thirdparty lib such as caffe-fast-rcnn support System
 10. add _init_path func to support example and utils to auto find thirdparty lib path
 11. add src test case, update person fast-rcnn detect function and testing case
+12. reduce Sys repo size, change big model file as link file; no check in thirdparty lib folder change it to soft link
