@@ -14,7 +14,7 @@ from moviepy.editor import VideoFileClip
 import _init_utils_paths
 from Logger import *
 
-#logger = Logger(logger='fetchLog')
+logger = Logger(logger='FetchFunc')
 
 def split_video_to_frame(video_path, interval=4, lenth=10):
 	"""
@@ -22,7 +22,7 @@ def split_video_to_frame(video_path, interval=4, lenth=10):
 	:parm video_path: video file local path
 	:parm interval:	each seconds to get interval frame
 	"""
-	logger = Logger(logger='fetchLog')
+	#logger = Logger(logger='fetchLog')
 	camera_detect_img = {}
 	clipobj = VideoFileClip(video_path)
 
@@ -37,9 +37,8 @@ def split_video_to_frame(video_path, interval=4, lenth=10):
 			camera_detect_img[count] = img
 			count += 1
 		total += 1
-
 	if count == number:
-		return camera_detect_img
+                pass
 	elif count < number:
 		logger.logger.warn("Waring true frame number:%s is small need to expend" % str(count))
 		for index in range(number - count):
@@ -52,4 +51,5 @@ def split_video_to_frame(video_path, interval=4, lenth=10):
 			del camera_detect_img[count]
 
 	clipobj.__del__()
+        logger.logger.info("split video to frame %s" % video_path)
 	return camera_detect_img

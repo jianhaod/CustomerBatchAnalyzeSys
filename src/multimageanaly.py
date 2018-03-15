@@ -16,10 +16,12 @@ import fileinput
 import _init_utils_paths
 from Logger import *
 
-def queuepush(q, path):
-	video_detect_dict = {}
-	video_detect_dict = fetch.split_video_to_frame(path)
-	q.put(video_detect_dict)
+def queuepush(itemkey, q, lock, inner_batch_num):
+	for i in range(inner_batch_num):
+		video_detect_dict = {}
+		item_key, video_path = conn.brpop(itemkey, timeout=60) 
+		video_detect_dict = fetch.split_video_to_frame(video_path)
+		q.put(video_detect_dict)
 
 def queueget(q, lock):
 	while True:
@@ -50,21 +52,23 @@ def queueget(q, lock):
             break
 """
 
-def multimageanaly(paralnum, input_path, videopath):
+def multimageanaly(inner_batch_num, wait_fetch_list):
 	"""
-	param: paralnum
+	param: inner_batch_num 
 	param: videopath
 	"""
 	logger = Logger(logger='multimageanalyLog')
+    paralnum = len(wait_fetch_list)
 	pool = Pool(paralnum)
 
 	q = Queue()
 	lock = Lock()
 
 	logger.logger.info("launch %d process to fetch analye input video!" % paralnum)
-	for line in fileinput.input(videopath):
-		pool.apply_async(queuepush, (q, input_path + line.strip()))
-
+    
+	for index in range(len(wait_fetch_list)):
+    	pool.apply_async(queuepush, (wait_fetch_list[x],q,lock, inner_batch_num))
+  
 	logger.logger.info("launch %d process to consumer analye result!" % (paralnum/2))
 	for index in range(paralnum/2):
 		pool.apply_async(queueget, (q, lock))
