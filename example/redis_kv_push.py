@@ -24,8 +24,6 @@ redis_kv_logger.logger.info("Start to push key value pair into redis")
 
 # testInput video
 testDir1 = '/data/jianhaod/testInput/SQ2128/20180310/Channel_03/Append/'
-#testDir2 = '/data/ossfs/testInput/SQ2130/20180310/Channel_08/Append/'
-#testDir3 = '/data/ossfs/testInput/SQ2132/20180310/Channel_07/Append/'
 
 for root, dirs, files in os.walk(testDir1):
     for file in files:

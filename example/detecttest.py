@@ -24,4 +24,6 @@ reslut = {}
 reslut[0] = camera_detect_img
 reslut[1] = local_path
 
+print reslut[0]
+print reslut[1]
 detectobj.fast_rcnn_detect(reslut)
