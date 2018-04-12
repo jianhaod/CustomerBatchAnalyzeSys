@@ -1,1 +1,1 @@
-../../../../models/vgg16_faster_rcnn.caffemodel
+../../../../models/caffe/faster_rcnn/vgg16_faster_rcnn.caffemodel

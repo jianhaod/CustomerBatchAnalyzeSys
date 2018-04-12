@@ -14,3 +14,4 @@ feature list:
 11. add src test case, update person fast-rcnn detect function and testing case
 12. reduce Sys repo size, change big model file as link file; no check in thirdparty lib folder change it to soft link
 13. update sysmain script, in order to use multiple process get video and on process consume video
+14. add new function model, use tensorflow resnet to get pedestrian feature(128)

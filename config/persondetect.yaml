@@ -19,4 +19,4 @@ CONF_THRESH: !!float 0.7
 NMS_THRESH: !!float 0.2
 
 # pre output dir
-pre_output: ../output
+pre_output: ../output/detOutput

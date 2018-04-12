@@ -1,0 +1,25 @@
+# Tensorflow net config file
+
+# tensorflow pedestrian feature net file
+tfmodel: ../models/tensorflow/pedestrianfeature/mars-small128.ckpt-68577
+
+# feature shape config
+image_shape: 
+ - 128 
+ - 64
+ - 3
+
+# loss mode
+loss_mode: cosine
+
+# batch size
+batch_size: 32
+
+# tensorflow GPU fraction
+GPU_fraction: 0.5
+
+# caffe object detect output pre path
+pre_objdetect_output: ../output/detOutput
+
+# pre output dir
+pre_feature_output: ../output/featureOutput
